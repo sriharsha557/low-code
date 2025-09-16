@@ -202,6 +202,139 @@
             color: #333;
         }
 
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.9);
+            border: 3px solid #000;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 12px 12px 0px rgba(0,0,0,0.2);
+        }
+
+        .feature-card:nth-child(1) {
+            border-color: #ff6b6b;
+            box-shadow: 8px 8px 0px rgba(255,107,107,0.3);
+        }
+
+        .feature-card:nth-child(2) {
+            border-color: #4ecdc4;
+            box-shadow: 8px 8px 0px rgba(78,205,196,0.3);
+        }
+
+        .feature-card:nth-child(3) {
+            border-color: #ffd93d;
+            box-shadow: 8px 8px 0px rgba(255,217,61,0.3);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.2));
+        }
+
+        .feature-card h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            border: 4px solid #000;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.2);
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 15px,
+                rgba(255,255,255,0.1) 15px,
+                rgba(255,255,255,0.1) 30px
+            );
+            animation: slide 4s linear infinite;
+        }
+
+        .cta-section h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.2rem;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 0px rgba(255,255,255,0.5);
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-btn {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+            border: 3px solid #000;
+        }
+
+        .cta-btn:hover {
+            background: #fff;
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
+        }
+
         /* Construction Notice */
         .construction {
             background: linear-gradient(45deg, #ff6b6b, #ffd93d);
@@ -329,27 +462,41 @@
             <p class="subtitle">Visual Development Platform</p>
         </section>
 
-        <!-- Content Section -->
+        <!-- About Section -->
         <section class="content">
-            <h2>What is Low-Code Development?</h2>
+            <h2>About Low-Code.in</h2>
             <p>
-                Low-code development is a modern software creation approach that emphasizes visual interfaces and pre-built components instead of traditional coding methods.
+                Low-code doesn't have to be dry. Explore creative templates, easy guides, and playful workflows designed to bring your ideas to life—without getting overwhelmed.
             </p>
             <p>
-                The growing adoption of low-code platforms is driven by their intuitive visual interfaces, ready-made templates, and straightforward deployment options. These platforms attract businesses of all sizes with their built-in security features, integration capabilities, and scalability.
-            </p>
-            <p>
-                Low-code development has transformed app creation. Citizen developers with basic technical knowledge can now build functional business applications, while professional developers benefit from faster development cycles, simpler maintenance, and more time to focus on complex challenges.
-            </p>
-            <p>
-                The integration of AI capabilities into low-code platforms represents a significant leap forward. Organizations can now implement sophisticated AI solutions without requiring extensive expertise in machine learning or data science.
+                We believe in making app creation less stiff and more spirited! Our platform combines the power of visual development with a fun, approachable experience that speaks your language.
             </p>
         </section>
 
-        <!-- Construction Notice -->
-        <section class="construction">
-            <h2>🚧 Under Construction 🚧</h2>
-            <p>This awesome page is being built with low-code magic! Check back soon for more updates.</p>
+        <!-- Features Section -->
+        <section class="features-grid">
+            <div class="feature-card">
+                <div class="card-icon">📱</div>
+                <h3>Templates with Personality</h3>
+                <p>Customize designs that feel familiar and fun, making coding approachable for everyone.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">📖</div>
+                <h3>Guides That Speak Your Language</h3>
+                <p>Step-by-step walkthroughs that break down complexity without jargon or confusion.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">🌟</div>
+                <h3>Community Vibes</h3>
+                <p>Join others learning, sharing, and building apps in a supportive and creative environment.</p>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Ready to build something cool?</h2>
+            <p>We're cooking up something awesome in the low-code kitchen! 👨‍🍳✨</p>
+            <button class="cta-btn" onclick="alert('Stay tuned for the magic!')">Coming Soon!</button>
         </section>
     </div>
 </body>
