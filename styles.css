@@ -336,7 +336,7 @@ body::before {
 .icon-container:nth-child(3) { border-color: #4ecdc4; }
 
 .about-icon {
-    width: 360px;
+    width: 260px;
     height: auto;
     filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
     transition: all 0.3s ease;
