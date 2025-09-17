@@ -971,7 +971,7 @@ body::before {
 .contact-submit:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-    transform: none !important;
+    transform: none !welcome;
 }
 
 .contact-submit:disabled:hover {
@@ -1523,6 +1523,23 @@ body::before {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+/* Welcome message section */
+.welcome-message {
+    color: #000000; /* black, or choose something else */
+}
+
+.welcome-message h2 {
+    color: #4ecdc4; /* teal to match your theme */
+}
+
+/* Community rules section */
+.community-rules {
+    color: #000000; /* default text in black */
+}
+
+.community-rules h3 {
+    color: #4ecdc4; /* teal heading */
+}
 
 .community-rules {
     background: rgba(255,255,255,0.95);
@@ -1535,7 +1552,7 @@ body::before {
 
 .community-rules h3 {
     font-family: 'Orbitron', monospace;
-    color: #333;
+    color: #000;
     margin-bottom: 15px;
     text-transform: uppercase;
 }
