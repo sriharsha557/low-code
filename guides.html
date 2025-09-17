@@ -3,115 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Guides - Retro Code Tutorials</title>
-    <meta name="description" content="Collection of development tutorials and guides with a retro computing aesthetic">
+    <title>Guides - Low-Code.in</title>
+    <meta name="description" content="Development guides and tutorials for low-code platforms">
     
     <!-- External Dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMDAwMDAwIi8+CjxwYXRoIGQ9Ik04IDhIMjRWMjRIOFY4WiIgc3Ryb2tlPSIjMDBGRjAwIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+">
 </head>
 <body>
-    <!-- Terminal Header -->
-    <header class="terminal-header">
-        <div class="terminal-menu">
-            <a href="index.html" class="menu-item">Home</a>
-            <a href="guides.html" class="menu-item active">Guides</a>
-            <a href="about.html" class="menu-item">About</a>
-            <a href="community.html" class="menu-item">Community</a>
-            <a href="contact.html" class="menu-item">Contact</a>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="assets/lowcode_2.png" alt="Low-Code.in" class="logo-img">
         </div>
+        <nav class="nav-buttons">
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="about.html" class="nav-btn">About</a>
+            <a href="guides.html" class="nav-btn active">Guides</a>
+            <a href="community.html" class="nav-btn">Community</a>
+            <a href="contact.html" class="nav-btn">Contact</a>
+        </nav>
     </header>
 
     <!-- Main Container -->
     <div class="container">
         <!-- Welcome Screen - Auto-hide and show guides -->
-        <div id="welcome-screen" class="screen">
-            <div class="ascii-art">
-                <pre>
-██████╗ ███████╗██╗   ██╗     ██████╗ ██╗   ██╗██╗██████╗ ███████╗███████╗
-██╔══██╗██╔════╝██║   ██║    ██╔════╝ ██║   ██║██║██╔══██╗██╔════╝╚══════╝
-██║  ██║█████╗  ██║   ██║    ██║  ███╗██║   ██║██║██║  ██║█████╗  ███████╗
-██║  ██║██╔══╝  ╚██╗ ██╔╝    ██║   ██║██║   ██║██║██║  ██║██╔══╝  ╚══════╝
-██████╔╝███████╗ ╚████╔╝     ╚██████╔╝╚██████╔╝██║██████╔╝███████╗███████║
-╚═════╝ ╚══════╝  ╚═══╝       ╚═════╝  ╚═════╝ ╚═╝╚═════╝ ╚══════╝╚══════╝
-                </pre>
-            </div>
-            <div class="welcome-text">
-                <p class="typewriter">> Welcome to the Developer Guides Terminal</p>
-                <p class="typewriter" style="animation-delay: 1s;">> Loading tutorial database...</p>
-                <p class="typewriter" style="animation-delay: 2s;">> Initializing guides display...</p>
-            </div>
+        <div id="welcome-screen" class="screen active">
+            <section class="hero">
+                <div class="floating-element triangle top-right"></div>
+                <div class="floating-element square top-left"></div>
+                <div class="floating-element circle bottom-right"></div>
+                
+                <h1 class="glitch">LOADING GUIDES...</h1>
+                <p class="subtitle">Initializing Tutorial Database</p>
+                
+                <div class="loading-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p class="loading-text">Scanning repository for guides...</p>
+                </div>
+            </section>
         </div>
         
         <!-- Guides List Screen -->
         <div id="guides-screen" class="screen">
-            <div class="screen-header">
-                <h1 class="glitch" data-text="AVAILABLE GUIDES">AVAILABLE GUIDES</h1>
-                <div class="status-bar">
-                    <span class="status-item">STATUS: ONLINE</span>
-                    <span class="status-item">GUIDES: <span id="guide-count">0</span></span>
-                    <span class="status-item">VERSION: 1.0.0</span>
+            <section class="hero">
+                <div class="floating-element triangle top-right"></div>
+                <div class="floating-element square top-left"></div>
+                <div class="floating-element circle bottom-right"></div>
+                
+                <h1 class="glitch">DEVELOPMENT GUIDES</h1>
+                <p class="subtitle">Learn. Build. Create.</p>
+                
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <span class="stat-number" id="guide-count">0</span>
+                        <span class="stat-label">GUIDES</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">AVAILABLE</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">FREE</span>
+                        <span class="stat-label">ACCESS</span>
+                    </div>
                 </div>
-            </div>
+            </section>
             
-            <div class="guides-container">
+            <section class="guides-section">
                 <div class="guides-grid" id="guides-grid">
-                    <!-- Initial guides will be loaded here -->
+                    <!-- Guides will be loaded here -->
                 </div>
+                
                 <div class="load-more-container" id="load-more-container" style="display: none;">
-                    <button class="crt-button load-more-btn" onclick="loadMoreGuides()">
-                        <span class="button-text">LOAD MORE GUIDES</span>
+                    <button class="cta-btn load-more-btn" onclick="loadMoreGuides()">
+                        Load More Guides
                     </button>
                 </div>
+                
                 <div class="loading" id="loading">
-                    <div class="spinner"></div>
-                    <p>SCANNING REPOSITORY...</p>
+                    <div class="spinner-container">
+                        <div class="retro-spinner"></div>
+                        <p>SCANNING FOR GUIDES...</p>
+                    </div>
                 </div>
-                <div class="error-message" id="error-message" style="display: none;">
-                    <p>ERROR: FAILED TO LOAD GUIDES</p>
-                    <button class="retry-button" onclick="loadGuides()">RETRY</button>
+                
+                <div class="error-section" id="error-message" style="display: none;">
+                    <div class="error-box">
+                        <h3>Oops! Something went wrong</h3>
+                        <p>Failed to load guides. Please try again.</p>
+                        <button class="cta-btn" onclick="loadInitialGuides()">Retry</button>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
 
         <!-- Guide Viewer Screen -->
         <div id="viewer-screen" class="screen">
-            <div class="viewer-header">
-                <button class="back-button" onclick="showGuidesList()">
-                    <span>&lt; BACK TO GUIDES</span>
-                </button>
-                <h2 class="guide-title" id="guide-title">Loading...</h2>
-                <div class="guide-meta">
-                    <span id="guide-date"></span>
-                    <span id="guide-size"></span>
+            <section class="viewer-header-section">
+                <div class="back-navigation">
+                    <button class="nav-btn back-button" onclick="showGuidesList()">
+                        ← Back to Guides
+                    </button>
                 </div>
-            </div>
-            <div class="guide-content" id="guide-content">
-                <div class="content-loading">
-                    <div class="spinner"></div>
-                    <p>COMPILING MARKDOWN...</p>
+                
+                <div class="guide-title-section">
+                    <h1 class="guide-main-title" id="guide-title">Loading Guide...</h1>
+                    <div class="guide-metadata">
+                        <span class="meta-item" id="guide-date">Date: Loading...</span>
+                        <span class="meta-item" id="guide-size">Size: Loading...</span>
+                    </div>
                 </div>
-            </div>
+            </section>
+            
+            <section class="guide-content-section">
+                <div class="guide-content" id="guide-content">
+                    <div class="content-loading">
+                        <div class="retro-spinner"></div>
+                        <p>COMPILING MARKDOWN...</p>
+                    </div>
+                </div>
+            </section>
         </div>
-
-    <!-- Footer -->
-    <footer class="terminal-footer">
-        <div class="footer-content">
-            <span class="footer-item">SYSTEM: OPERATIONAL</span>
-            <span class="footer-item">RAM: 64KB</span>
-            <span class="footer-item">CPU: 8088</span>
-            <span class="footer-item">© 2024 DEV.GUIDES</span>
-        </div>
-    </footer>
+    </div>
 
     <!-- Custom JavaScript -->
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
