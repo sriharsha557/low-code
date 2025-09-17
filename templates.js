@@ -19,35 +19,39 @@ const mockTemplates = [
         features: ["Responsive Design", "Contact Forms", "SEO Optimized", "Mobile First"],
         downloads: 1250,
         rating: 4.8,
+        size: "2.3 MB",
+        version: "v2.1",
+        preview_url: "https://example.com/preview/business-landing",
+        download_url: "#",
+        content: "# Business Landing Page Template\n\n## Overview\nA modern, professional landing page template designed for businesses of all sizes.\n\n## Features\n- **Responsive Design**: Looks great on all devices\n- **Contact Forms**: Built-in contact functionality\n- **SEO Optimized**: Search engine friendly\n- **Fast Loading**: Optimized for performance\n\n## Technologies Used\n- HTML5\n- CSS3\n- JavaScript\n- Bootstrap 5\n\n## Installation\n1. Download the template files\n2. Extract to your web directory\n3. Customize the content\n4. Deploy to your server\n\n## Customization\nThe template includes easy-to-edit sections for:\n- Hero content\n- Services\n- About section\n- Contact information\n- Social media links"
+    },
+    {
+        id: 2,
+        name: "E-commerce Store",
+        category: "webpage",
+        description: "Complete e-commerce solution with shopping cart, payment integration, and admin dashboard. Ready for online retail business.",
+        features: ["Shopping Cart", "Payment Gateway", "Admin Panel", "Inventory Management"],
+        downloads: 980,
+        rating: 4.6,
+        size: "5.7 MB",
+        version: "v3.0",
+        preview_url: "https://example.com/preview/ecommerce",
+        download_url: "#",
+        content: "# E-commerce Store Template\n\n## Complete Online Store Solution\nFull-featured e-commerce template with everything you need to start selling online.\n\n## Key Features\n- **Product Management**: Easy product catalog management\n- **Shopping Cart**: Intuitive cart functionality\n- **Payment Processing**: Multiple payment gateway support\n- **Order Management**: Complete order tracking system\n- **User Accounts**: Customer registration and profiles\n- **Admin Dashboard**: Comprehensive admin interface\n\n## Included Pages\n- Homepage with featured products\n- Product catalog with filtering\n- Individual product pages\n- Shopping cart and checkout\n- User account pages\n- Admin dashboard\n\n## Setup Instructions\n1. Install on your web server\n2. Configure database connection\n3. Set up payment gateways\n4. Customize branding and content\n5. Add your products\n6. Go live!"
+    },
+    {
+        id: 3,
+        name: "Portfolio Showcase",
+        category: "webpage",
+        description: "Creative portfolio template for designers, photographers, and artists. Features gallery, blog, and contact sections.",
+        features: ["Image Gallery", "Blog System", "Portfolio Grid", "Lightbox"],
+        downloads: 2100,
+        rating: 4.9,
         size: "1.8 MB",
         version: "v1.5",
         preview_url: "https://example.com/preview/portfolio",
         download_url: "#",
-        content: `# Portfolio Showcase Template
-
-## Creative Portfolio Solution
-Elegant portfolio template perfect for showcasing your creative work.
-
-## Features
-- **Image Gallery**: Beautiful grid layout for your work
-- **Lightbox**: Full-screen image viewing
-- **Blog Integration**: Share your creative process
-- **Contact Forms**: Let clients reach out easily
-- **Mobile Optimized**: Looks great on all devices
-- **Fast Loading**: Optimized images and code
-
-## Perfect For
-- Photographers
-- Graphic Designers
-- Artists
-- Creative Professionals
-- Freelancers
-
-## Customization Options
-- Multiple color schemes
-- Flexible layout options
-- Easy content management
-- Social media integration`
+        content: "# Portfolio Showcase Template\n\n## Creative Portfolio Solution\nElegant portfolio template perfect for showcasing your creative work.\n\n## Features\n- **Image Gallery**: Beautiful grid layout for your work\n- **Lightbox**: Full-screen image viewing\n- **Blog Integration**: Share your creative process\n- **Contact Forms**: Let clients reach out easily\n- **Mobile Optimized**: Looks great on all devices\n- **Fast Loading**: Optimized images and code\n\n## Perfect For\n- Photographers\n- Graphic Designers\n- Artists\n- Creative Professionals\n- Freelancers\n\n## Customization Options\n- Multiple color schemes\n- Flexible layout options\n- Easy content management\n- Social media integration"
     },
     // AI Apps
     {
@@ -62,38 +66,7 @@ Elegant portfolio template perfect for showcasing your creative work.
         version: "v4.2",
         preview_url: "https://example.com/preview/ai-chatbot",
         download_url: "#",
-        content: `# AI Chatbot Assistant
-
-## Intelligent Conversation AI
-Advanced chatbot application with natural language understanding and contextual responses.
-
-## Core Features
-- **Natural Language Processing**: Understands complex queries
-- **Conversation Memory**: Remembers context throughout chat
-- **Personality Customization**: Adjustable tone and responses
-- **Multi-language Support**: Communicate in multiple languages
-- **Learning Capabilities**: Improves responses over time
-- **Integration Ready**: Easy API integration
-
-## Use Cases
-- Customer support
-- Personal assistant
-- Educational tutor
-- Entertainment companion
-- Business automation
-
-## Technical Requirements
-- Python 3.8+
-- TensorFlow/PyTorch
-- OpenAI API access
-- Database for conversation storage
-
-## Setup Guide
-1. Install dependencies
-2. Configure API keys
-3. Train custom personality
-4. Deploy to your platform
-5. Test and refine responses`
+        content: "# AI Chatbot Assistant\n\n## Intelligent Conversation AI\nAdvanced chatbot application with natural language understanding and contextual responses.\n\n## Core Features\n- **Natural Language Processing**: Understands complex queries\n- **Conversation Memory**: Remembers context throughout chat\n- **Personality Customization**: Adjustable tone and responses\n- **Multi-language Support**: Communicate in multiple languages\n- **Learning Capabilities**: Improves responses over time\n- **Integration Ready**: Easy API integration\n\n## Use Cases\n- Customer support\n- Personal assistant\n- Educational tutor\n- Entertainment companion\n- Business automation\n\n## Technical Requirements\n- Python 3.8+\n- TensorFlow/PyTorch\n- OpenAI API access\n- Database for conversation storage\n\n## Setup Guide\n1. Install dependencies\n2. Configure API keys\n3. Train custom personality\n4. Deploy to your platform\n5. Test and refine responses"
     },
     {
         id: 5,
@@ -107,39 +80,7 @@ Advanced chatbot application with natural language understanding and contextual 
         version: "v2.8",
         preview_url: "https://example.com/preview/image-recognition",
         download_url: "#",
-        content: `# Image Recognition Application
-
-## Advanced Computer Vision
-Powerful image recognition system using state-of-the-art AI models.
-
-## Capabilities
-- **Object Detection**: Identify and classify objects in images
-- **Face Recognition**: Detect and recognize faces with high accuracy
-- **Scene Analysis**: Understand image context and environment
-- **Text Extraction**: OCR functionality for text in images
-- **Real-time Processing**: Fast analysis for live camera feeds
-- **Batch Processing**: Handle multiple images simultaneously
-
-## Applications
-- Security systems
-- Content moderation
-- Inventory management
-- Medical imaging
-- Automotive systems
-- Social media platforms
-
-## Model Features
-- 95%+ accuracy on standard datasets
-- Support for 1000+ object classes
-- Custom model training capabilities
-- Edge deployment optimization
-
-## Installation
-1. Download the application
-2. Install required dependencies
-3. Configure camera/image input
-4. Run calibration tests
-5. Start recognition engine`
+        content: "# Image Recognition Application\n\n## Advanced Computer Vision\nPowerful image recognition system using state-of-the-art AI models.\n\n## Capabilities\n- **Object Detection**: Identify and classify objects in images\n- **Face Recognition**: Detect and recognize faces with high accuracy\n- **Scene Analysis**: Understand image context and environment\n- **Text Extraction**: OCR functionality for text in images\n- **Real-time Processing**: Fast analysis for live camera feeds\n- **Batch Processing**: Handle multiple images simultaneously\n\n## Applications\n- Security systems\n- Content moderation\n- Inventory management\n- Medical imaging\n- Automotive systems\n- Social media platforms\n\n## Model Features\n- 95%+ accuracy on standard datasets\n- Support for 1000+ object classes\n- Custom model training capabilities\n- Edge deployment optimization\n\n## Installation\n1. Download the application\n2. Install required dependencies\n3. Configure camera/image input\n4. Run calibration tests\n5. Start recognition engine"
     },
     {
         id: 6,
@@ -153,40 +94,7 @@ Powerful image recognition system using state-of-the-art AI models.
         version: "v3.1",
         preview_url: "https://example.com/preview/sentiment-analysis",
         download_url: "#",
-        content: `# Sentiment Analysis Tool
-
-## Advanced Text Emotion Detection
-Comprehensive sentiment analysis with detailed emotional insights.
-
-## Analysis Features
-- **Sentiment Scoring**: Positive/negative/neutral classification
-- **Emotion Detection**: Joy, anger, fear, sadness, surprise, disgust
-- **Confidence Levels**: Reliability scores for each prediction
-- **Batch Processing**: Analyze multiple texts simultaneously
-- **Historical Tracking**: Monitor sentiment trends over time
-- **Custom Training**: Adapt to domain-specific language
-
-## Business Applications
-- Social media monitoring
-- Customer feedback analysis
-- Brand reputation management
-- Market research
-- Content optimization
-- Customer service insights
-
-## Supported Formats
-- Plain text
-- CSV files
-- JSON data
-- Social media posts
-- Reviews and comments
-- Survey responses
-
-## API Integration
-- RESTful API endpoints
-- Real-time webhooks
-- Batch processing queues
-- Custom model deployment`
+        content: "# Sentiment Analysis Tool\n\n## Advanced Text Emotion Detection\nComprehensive sentiment analysis with detailed emotional insights.\n\n## Analysis Features\n- **Sentiment Scoring**: Positive/negative/neutral classification\n- **Emotion Detection**: Joy, anger, fear, sadness, surprise, disgust\n- **Confidence Levels**: Reliability scores for each prediction\n- **Batch Processing**: Analyze multiple texts simultaneously\n- **Historical Tracking**: Monitor sentiment trends over time\n- **Custom Training**: Adapt to domain-specific language\n\n## Business Applications\n- Social media monitoring\n- Customer feedback analysis\n- Brand reputation management\n- Market research\n- Content optimization\n- Customer service insights\n\n## Supported Formats\n- Plain text\n- CSV files\n- JSON data\n- Social media posts\n- Reviews and comments\n- Survey responses\n\n## API Integration\n- RESTful API endpoints\n- Real-time webhooks\n- Batch processing queues\n- Custom model deployment"
     },
     // Agentic Apps
     {
@@ -201,41 +109,7 @@ Comprehensive sentiment analysis with detailed emotional insights.
         version: "v1.9",
         preview_url: "https://example.com/preview/task-agent",
         download_url: "#",
-        content: `# Task Automation Agent
-
-## Intelligent Process Automation
-Advanced agentic system that autonomously handles complex workflows.
-
-## Agent Capabilities
-- **Task Decomposition**: Break complex goals into manageable steps
-- **Dynamic Planning**: Adapt plans based on changing conditions
-- **Resource Management**: Optimize use of available tools and APIs
-- **Error Handling**: Automatic recovery and alternative approaches
-- **Progress Reporting**: Real-time status updates and notifications
-- **Learning Integration**: Improve performance through experience
-
-## Automation Features
-- Web scraping and data collection
-- File processing and organization
-- Email and communication management
-- Report generation and distribution
-- Database operations and maintenance
-- System monitoring and alerts
-
-## Use Cases
-- Business process automation
-- Data pipeline management
-- Content management workflows
-- Customer service automation
-- Research and analysis tasks
-- System administration
-
-## Configuration
-1. Define task objectives
-2. Set up tool integrations
-3. Configure monitoring parameters
-4. Test execution flows
-5. Deploy autonomous operation`
+        content: "# Task Automation Agent\n\n## Intelligent Process Automation\nAdvanced agentic system that autonomously handles complex workflows.\n\n## Agent Capabilities\n- **Task Decomposition**: Break complex goals into manageable steps\n- **Dynamic Planning**: Adapt plans based on changing conditions\n- **Resource Management**: Optimize use of available tools and APIs\n- **Error Handling**: Automatic recovery and alternative approaches\n- **Progress Reporting**: Real-time status updates and notifications\n- **Learning Integration**: Improve performance through experience\n\n## Automation Features\n- Web scraping and data collection\n- File processing and organization\n- Email and communication management\n- Report generation and distribution\n- Database operations and maintenance\n- System monitoring and alerts\n\n## Use Cases\n- Business process automation\n- Data pipeline management\n- Content management workflows\n- Customer service automation\n- Research and analysis tasks\n- System administration\n\n## Configuration\n1. Define task objectives\n2. Set up tool integrations\n3. Configure monitoring parameters\n4. Test execution flows\n5. Deploy autonomous operation"
     },
     {
         id: 8,
@@ -249,49 +123,7 @@ Advanced agentic system that autonomously handles complex workflows.
         version: "v2.3",
         preview_url: "https://example.com/preview/research-bot",
         download_url: "#",
-        content: `# Research Assistant Bot
-
-## Autonomous Research Intelligence
-Comprehensive research agent that conducts thorough investigations and analysis.
-
-## Research Capabilities
-- **Multi-source Data Gathering**: Web, databases, APIs, documents
-- **Information Verification**: Cross-reference and fact-checking
-- **Data Analysis**: Statistical analysis and pattern recognition
-- **Report Synthesis**: Generate structured, comprehensive reports
-- **Citation Management**: Proper source attribution and referencing
-- **Continuous Learning**: Improve research strategies over time
-
-## Research Domains
-- Academic research
-- Market analysis
-- Competitive intelligence
-- Technical documentation
-- News and trend analysis
-- Scientific literature review
-
-## Output Formats
-- Executive summaries
-- Detailed research reports
-- Data visualizations
-- Reference bibliographies
-- Presentation slides
-- Raw data exports
-
-## Workflow Process
-1. Define research questions
-2. Identify relevant sources
-3. Collect and verify information
-4. Analyze and synthesize data
-5. Generate comprehensive reports
-6. Provide recommendations
-
-## Advanced Features
-- Multi-language research
-- Real-time monitoring
-- Collaborative workflows
-- Custom research templates
-- Integration with research tools`
+        content: "# Research Assistant Bot\n\n## Autonomous Research Intelligence\nComprehensive research agent that conducts thorough investigations and analysis.\n\n## Research Capabilities\n- **Multi-source Data Gathering**: Web, databases, APIs, documents\n- **Information Verification**: Cross-reference and fact-checking\n- **Data Analysis**: Statistical analysis and pattern recognition\n- **Report Synthesis**: Generate structured, comprehensive reports\n- **Citation Management**: Proper source attribution and referencing\n- **Continuous Learning**: Improve research strategies over time\n\n## Research Domains\n- Academic research\n- Market analysis\n- Competitive intelligence\n- Technical documentation\n- News and trend analysis\n- Scientific literature review\n\n## Output Formats\n- Executive summaries\n- Detailed research reports\n- Data visualizations\n- Reference bibliographies\n- Presentation slides\n- Raw data exports\n\n## Workflow Process\n1. Define research questions\n2. Identify relevant sources\n3. Collect and verify information\n4. Analyze and synthesize data\n5. Generate comprehensive reports\n6. Provide recommendations\n\n## Advanced Features\n- Multi-language research\n- Real-time monitoring\n- Collaborative workflows\n- Custom research templates\n- Integration with research tools"
     },
     {
         id: 9,
@@ -305,49 +137,7 @@ Comprehensive research agent that conducts thorough investigations and analysis.
         version: "v3.5",
         preview_url: "https://example.com/preview/customer-agent",
         download_url: "#",
-        content: `# Customer Service Agent
-
-## Intelligent Customer Support Automation
-Advanced agentic system for autonomous customer service operations.
-
-## Service Capabilities
-- **Issue Classification**: Automatic categorization of customer inquiries
-- **Resolution Planning**: Multi-step problem-solving approaches
-- **Knowledge Base Integration**: Access to comprehensive support resources
-- **Escalation Management**: Smart handoff to human agents when needed
-- **Sentiment Monitoring**: Detect customer frustration and adjust approach
-- **Follow-up Actions**: Automated case closure and satisfaction surveys
-
-## Communication Channels
-- Live chat integration
-- Email support automation
-- Social media monitoring
-- Phone system integration
-- Mobile app messaging
-- Self-service portals
-
-## Business Benefits
-- 24/7 availability
-- Consistent service quality
-- Reduced response times
-- Cost-effective scaling
-- Improved customer satisfaction
-- Data-driven insights
-
-## Integration Features
-- CRM system connectivity
-- Ticket management systems
-- Knowledge base platforms
-- Analytics and reporting
-- Multi-language support
-- Custom workflow rules
-
-## Implementation
-1. Configure knowledge base
-2. Set up communication channels
-3. Define escalation rules
-4. Train on historical data
-5. Monitor and optimize performance`
+        content: "# Customer Service Agent\n\n## Intelligent Customer Support Automation\nAdvanced agentic system for autonomous customer service operations.\n\n## Service Capabilities\n- **Issue Classification**: Automatic categorization of customer inquiries\n- **Resolution Planning**: Multi-step problem-solving approaches\n- **Knowledge Base Integration**: Access to comprehensive support resources\n- **Escalation Management**: Smart handoff to human agents when needed\n- **Sentiment Monitoring**: Detect customer frustration and adjust approach\n- **Follow-up Actions**: Automated case closure and satisfaction surveys\n\n## Communication Channels\n- Live chat integration\n- Email support automation\n- Social media monitoring\n- Phone system integration\n- Mobile app messaging\n- Self-service portals\n\n## Business Benefits\n- 24/7 availability\n- Consistent service quality\n- Reduced response times\n- Cost-effective scaling\n- Improved customer satisfaction\n- Data-driven insights\n\n## Integration Features\n- CRM system connectivity\n- Ticket management systems\n- Knowledge base platforms\n- Analytics and reporting\n- Multi-language support\n- Custom workflow rules\n\n## Implementation\n1. Configure knowledge base\n2. Set up communication channels\n3. Define escalation rules\n4. Train on historical data\n5. Monitor and optimize performance"
     }
 ];
 
@@ -732,88 +522,4 @@ function searchTemplates(query) {
     currentPage = 1;
     displayTemplates(filteredTemplates.slice(0, templatesPerPage));
     updateLoadMoreButton();
-}"2.3 MB",
-        version: "v2.1",
-        preview_url: "https://example.com/preview/business-landing",
-        download_url: "#",
-        content: `# Business Landing Page Template
-
-## Overview
-A modern, professional landing page template designed for businesses of all sizes.
-
-## Features
-- **Responsive Design**: Looks great on all devices
-- **Contact Forms**: Built-in contact functionality
-- **SEO Optimized**: Search engine friendly
-- **Fast Loading**: Optimized for performance
-
-## Technologies Used
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap 5
-
-## Installation
-1. Download the template files
-2. Extract to your web directory
-3. Customize the content
-4. Deploy to your server
-
-## Customization
-The template includes easy-to-edit sections for:
-- Hero content
-- Services
-- About section
-- Contact information
-- Social media links`
-    },
-    {
-        id: 2,
-        name: "E-commerce Store",
-        category: "webpage",
-        description: "Complete e-commerce solution with shopping cart, payment integration, and admin dashboard. Ready for online retail business.",
-        features: ["Shopping Cart", "Payment Gateway", "Admin Panel", "Inventory Management"],
-        downloads: 980,
-        rating: 4.6,
-        size: "5.7 MB",
-        version: "v3.0",
-        preview_url: "https://example.com/preview/ecommerce",
-        download_url: "#",
-        content: `# E-commerce Store Template
-
-## Complete Online Store Solution
-Full-featured e-commerce template with everything you need to start selling online.
-
-## Key Features
-- **Product Management**: Easy product catalog management
-- **Shopping Cart**: Intuitive cart functionality
-- **Payment Processing**: Multiple payment gateway support
-- **Order Management**: Complete order tracking system
-- **User Accounts**: Customer registration and profiles
-- **Admin Dashboard**: Comprehensive admin interface
-
-## Included Pages
-- Homepage with featured products
-- Product catalog with filtering
-- Individual product pages
-- Shopping cart and checkout
-- User account pages
-- Admin dashboard
-
-## Setup Instructions
-1. Install on your web server
-2. Configure database connection
-3. Set up payment gateways
-4. Customize branding and content
-5. Add your products
-6. Go live!`
-    },
-    {
-        id: 3,
-        name: "Portfolio Showcase",
-        category: "webpage",
-        description: "Creative portfolio template for designers, photographers, and artists. Features gallery, blog, and contact sections.",
-        features: ["Image Gallery", "Blog System", "Portfolio Grid", "Lightbox"],
-        downloads: 2100,
-        rating: 4.9,
-        size
+}
