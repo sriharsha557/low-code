@@ -1080,7 +1080,7 @@ body::before {
 .community-hero h1 {
     font-family: 'Orbitron', monospace;
     font-size: 3rem;
-    color: #fff;  /* Changed to white */
+    color: #000; 
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 20px;
@@ -1092,7 +1092,7 @@ body::before {
 .community-hero p {
     font-size: 1.3rem;
     font-weight: bold;
-    color: #fff;  /* Changed to white */
+    color: #000;  
     margin-bottom: 25px;
     position: relative;
     z-index: 2;
@@ -1518,7 +1518,7 @@ body::before {
 
 .welcome-message h2 {
     font-family: 'Orbitron', monospace;
-    color: #fff;
+    color: #000;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
