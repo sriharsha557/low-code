@@ -2253,3 +2253,39 @@ body::before {
     color: #ffffff;
     background-color: rgba(0, 255, 0, 0.2);
 }
+/* Ensure all text is visible */
+body, * {
+    color: #00ff00 !important;
+}
+
+.welcome-text p {
+    color: #00ff00 !important;
+    font-family: 'Courier New', monospace;
+}
+
+.ascii-art pre {
+    color: #00ff00 !important;
+    font-family: 'Courier New', monospace;
+}
+
+/* Load more button styling */
+.load-more-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.load-more-btn {
+    background: #000;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background: #00ff00;
+    color: #000;
+}
