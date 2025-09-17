@@ -3,109 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Low-Code.in</title>
+    <title>Low-Code.in - Visual Development Platform</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="logo">
-            <a href="index.html">
-                <img src="assets/lowcode_2.png" alt="Low-Code.in" class="logo-img">
-            </a>
+            <img src="assets/lowcode_2.png" alt="Low-Code.in" class="logo-img">
         </div>
         <nav class="nav-buttons">
-            <a href="index.html" class="nav-btn">Home</a>
             <a href="about.html" class="nav-btn">About</a>
-            <a href="contact.html" class="nav-btn active">Contact</a>
+            <a href="contact.html" class="nav-btn">Contact</a>
         </nav>
     </header>
 
     <!-- Main Container -->
     <div class="container">
-        <!-- Contact Hero Section -->
-        <section class="contact-hero">
+        <!-- Hero Section -->
+        <section class="hero">
             <div class="floating-element triangle top-right"></div>
             <div class="floating-element square top-left"></div>
             <div class="floating-element circle bottom-right"></div>
             
-            <h1 class="glitch">LET'S CONNECT!</h1>
-            <p class="subtitle">Ideas • Questions • Collaborations</p>
+            <h1 class="glitch">LOW-CODE REVOLUTION!</h1>
+            <p class="subtitle">Visual Development Platform</p>
         </section>
 
-        <!-- Contact Section -->
-        <section class="contact-section">
-            <div class="contact-header">
-                <h2>Get In Touch</h2>
-                <p class="contact-intro">⚡ Got an idea? A question? Or just want to geek out about low-code? Drop me a line — I'd love to connect.</p>
+        <!-- Features Section -->
+        <section class="features-grid">
+            <div class="feature-card">
+                <div class="card-icon">📱</div>
+                <h3>Templates with Personality</h3>
+                <p>Customize designs that feel familiar and fun, making coding approachable for everyone.</p>
             </div>
-            <div class="contact-content">
-                <div class="contact-card email-card">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email Me</h3>
-                    <a href="mailto:aivisionaryforfuture@gmail.com" class="contact-link">
-                        aivisionaryforfuture@gmail.com
-                    </a>
-                    <p class="contact-description">Best for detailed discussions, project ideas, or collaboration proposals.</p>
-                </div>
-                <div class="contact-card github-card">
-                    <div class="contact-icon">💼</div>
-                    <h3>Check Out My Code</h3>
-                    <a href="https://github.com/sriharsha557" target="_blank" class="contact-link">
-                        GitHub: sriharsha557
-                    </a>
-                    <p class="contact-description">Explore my projects, contribute, or just browse through the code.</p>
-                </div>
+            <div class="feature-card">
+                <div class="card-icon">📖</div>
+                <h3>Guides That Speak Your Language</h3>
+                <p>Step-by-step walkthroughs that break down complexity without jargon or confusion.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">🌟</div>
+                <h3>Community Vibes</h3>
+                <p>Join others learning, sharing, and building apps in a supportive and creative environment.</p>
             </div>
         </section>
 
-        <!-- Quick Contact Form -->
-        <section class="quick-contact">
-            <h2>Quick Message</h2>
-            <p>Want to send a quick note? Use this form and I'll get back to you!</p>
-            <div class="contact-form-container">
-                <div class="contact-item">
-                    <span class="contact-label">📝 Name:</span>
-                    <input type="text" id="name" class="contact-input" placeholder="Your awesome name">
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">💡 Message:</span>
-                    <textarea id="message" class="contact-textarea" placeholder="Tell me about your idea, question, or just say hi!"></textarea>
-                </div>
-                <button class="contact-submit" onclick="sendMessage()">Send Message 🚀</button>
-            </div>
-        </section>
-
-        <!-- Back to Home CTA -->
+        <!-- CTA Section -->
         <section class="cta-section">
-            <h2>Thanks for stopping by!</h2>
-            <p>Ready to dive into the low-code revolution? 🌟</p>
-            <a href="index.html" class="cta-btn">Back to Home</a>
+            <h2>Ready to build something cool?</h2>
+            <p>We're cooking up something awesome in the low-code kitchen! 👨‍🍳✨</p>
+            <button class="cta-btn" onclick="alert('Stay tuned for the magic!')">Coming Soon!</button>
         </section>
     </div>
-
-    <script>
-        function sendMessage() {
-            const name = document.getElementById('name').value;
-            const message = document.getElementById('message').value;
-            
-            if (!name || !message) {
-                alert('Please fill in both your name and message! 😊');
-                return;
-            }
-            
-            const subject = `Low-Code.in Contact: Message from ${name}`;
-            const body = `Hi there!\n\nName: ${name}\n\nMessage:\n${message}\n\nSent from Low-Code.in contact form.`;
-            
-            const mailtoLink = `mailto:aivisionaryforfuture@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoLink;
-            
-            // Clear form
-            document.getElementById('name').value = '';
-            document.getElementById('message').value = '';
-            
-            alert('Thanks for reaching out! Your email client should open now. 🎉');
-        }
-    </script>
 </body>
 </html>
