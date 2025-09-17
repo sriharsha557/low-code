@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Low-Code.in</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="assets/lowcode_2.png" alt="Low-Code.in" class="logo-img">
+        </div>
+        <nav class="nav-buttons">
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="about.html" class="nav-btn">About</a>
+            <a href="community.html" class="nav-btn active">Community</a>
+            <a href="contact.html" class="nav-btn">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Community Hero Section -->
+        <section class="community-hero">
+            <h1>JOIN THE REVOLUTION!</h1>
+            <p>Connect, Learn, and Build Amazing Apps Together</p>
+            <div class="community-stats">
+                <div class="stat-item">
+                    <div class="stat-number">1,247</div>
+                    <div class="stat-label">Builders</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3,892</div>
+                    <div class="stat-label">Posts</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">156</div>
+                    <div class="stat-label">Online</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome Message -->
+        <section class="welcome-message">
+            <h2>Welcome to the Low-Code Community! 🎉</h2>
+            <p>Whether you're a complete beginner or a seasoned app builder, this is your space to learn, share, and grow. Ask questions, share your projects, get feedback, and help others on their low-code journey. Together, we're making app development accessible to everyone!</p>
+        </section>
+
+        <!-- Community Rules -->
+        <section class="community-rules">
+            <h3>Community Guidelines</h3>
+            <ul class="rules-list">
+                <li>Be kind and respectful to all members</li>
+                <li>Search before posting to avoid duplicates</li>
+                <li>Share your projects and celebrate others' work</li>
+                <li>Help beginners and ask questions freely</li>
+                <li>Keep discussions relevant to low-code development</li>
+                <li>No spam, self-promotion, or off-topic content</li>
+            </ul>
+        </section>
+
+        <!-- Community Tabs -->
+        <div class="community-tabs">
+            <button class="tab-btn active" onclick="switchTab('forum')">📋 Forum</button>
+            <button class="tab-btn" onclick="switchTab('chat')">💬 Live Chat</button>
+            <button class="tab-btn" onclick="switchTab('discussion')">🗨️ Quick Discussion</button>
+        </div>
+
+        <!-- Forum Section -->
+        <section id="forum" class="tab-content active">
+            <div class="forum-section">
+                <h2 style="font-family: 'Orbitron', monospace; text-align: center; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px;">Community Forum</h2>
+                
+                <div class="forum-categories">
+                    <div class="category-card">
+                        <span class="category-icon">📱</span>
+                        <h3 class="category-title">Templates & Design</h3>
+                        <p class="category-desc">Share and discuss app templates, UI designs, and visual components.</p>
+                        <div class="category-stats">
+                            <span>324 posts</span>
+                            <span>89 members</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <span class="category-icon">🔧</span>
+                        <h3 class="category-title">Tools & Integrations</h3>
+                        <p class="category-desc">Discuss different low-code platforms, APIs, and third-party integrations.</p>
+                        <div class="category-stats">
+                            <span>567 posts</span>
+                            <span>142 members</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <span class="category-icon">🚀</span>
+                        <h3 class="category-title">Beginner Help</h3>
+                        <p class="category-desc">New to low-code? Start here! Get help with basics and first projects.</p>
+                        <div class="category-stats">
+                            <span>892 posts</span>
+                            <span>203 members</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <span class="category-icon">⚡</span>
+                        <h3 class="category-title">Advanced Projects</h3>
+                        <p class="category-desc">Complex builds, advanced techniques, and enterprise solutions.</p>
+                        <div class="category-stats">
+                            <span>234 posts</span>
+                            <span>67 members</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-posts">
+                    <h3>Recent Discussions</h3>
+                    
+                    <div class="post-item">
+                        <div class="post-avatar">JD</div>
+                        <div class="post-content">
+                            <h4>How to integrate Stripe payments in Bubble?</h4>
+                            <div class="post-meta">by JohnDoe • 2 hours ago • 5 replies</div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-item">
+                        <div class="post-avatar">AS</div>
+                        <div class="post-content">
+                            <h4>My first app built with Adalo - feedback welcome!</h4>
+                            <div class="post-meta">by AppSeeker • 4 hours ago • 12 replies</div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-item">
+                        <div class="post-avatar">MC</div>
+                        <div class="post-content">
+                            <h4>Free template: Social media dashboard</h4>
+                            <div class="post-meta">by MikeCreates • 6 hours ago • 23 replies</div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-item">
+                        <div class="post-avatar">LB</div>
+                        <div class="post-content">
+                            <h4>Comparison: Webflow vs FlutterFlow for web apps</h4>
+                            <div class="post-meta">by LowCodeBuilder • 1 day ago • 31 replies</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chat Integration Section -->
+        <section id="chat" class="tab-content">
+            <div class="chat-section">
+                <h2 style="font-family: 'Orbitron', monospace; text-align: center; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; position: relative; z-index: 2;">Live Chat Channels</h2>
+                
+                <div class="chat-options">
+                    <div class="chat-option">
+                        <span class="chat-icon">💬</span>
+                        <h3 class="chat-title">Discord Server</h3>
+                        <p class="chat-desc">Join our active Discord community with dedicated channels for different topics, voice chats, and screen sharing sessions.</p>
+                        <a href="#" class="chat-link">Join Discord</a>
+                    </div>
+                    
+                    <div class="chat-option">
+                        <span class="chat-icon">📱</span>
+                        <h3 class="chat-title">Telegram Group</h3>
+                        <p class="chat-desc">Quick questions and instant help in our Telegram group. Perfect for mobile users and quick discussions.</p>
+                        <a href="#" class="chat-link">Join Telegram</a>
+                    </div>
+                    
+                    <div class="chat-option">
+                        <span class="chat-icon">🎥</span>
+                        <h3 class="chat-title">Weekly Meetups</h3>
+                        <p class="chat-desc">Join our weekly video calls where we review projects, discuss new tools, and host guest speakers.</p>
+                        <a href="#" class="chat-link">Schedule Info</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Discussion Board Section -->
+        <section id="discussion" class="tab-content">
+            <div class="discussion-section">
+                <h2 style="font-family: 'Orbitron', monospace; text-align: center; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px;">Quick Discussion Board</h2>
+                
+                <!-- Post Form -->
+                <div class="post-form">
+                    <h3 style="font-family: 'Orbitron', monospace; margin-bottom: 20px; text-transform: uppercase;">Start a Discussion</h3>
+                    
+                    <form id="discussionForm">
+                        <div class="form-group">
+                            <label for="authorName" class="form-label">Your Name</label>
+                            <input type="text" id="authorName" class="form-input" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="postTitle" class="form-label">Discussion Title</label>
+                            <input type="text" id="postTitle" class="form-input" placeholder="What would you like to discuss?" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="postContent" class="form-label">Your Message</label>
+                            <textarea id="postContent" class="form-textarea" placeholder="Share your thoughts, ask a question, or start a discussion..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Post Discussion</button>
+                    </form>
+                </div>
+
+                <!-- Discussion Threads -->
+                <div class="discussion-threads" id="discussionThreads">
+                    <div class="thread-item">
+                        <div class="thread-header">
+                            <div class="thread-avatar">SC</div>
+                            <div class="thread-info">
+                                <h4>Which platform is best for e-commerce apps?</h4>
+                                <div class="thread-meta">by Sarah Chen • 3 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="thread-content">
+                            I'm building my first e-commerce app and torn between Bubble and Shopify. Looking for pros and cons from people who have used both platforms...
+                        </div>
+                    </div>
+                    
+                    <div class="thread-item">
+                        <div class="thread-header">
+                            <div class="thread-avatar">RM</div>
+                            <div class="thread-info">
+                                <h4>Free resources for app icons and graphics?</h4>
+                                <div class="thread-meta">by Robert Martinez • 5 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="thread-content">
+                            Can anyone recommend good sources for free app icons and graphics? I'm working on a productivity app and need some clean, modern assets.
+                        </div>
+                    </div>
+                    
+                    <div class="thread-item">
+                        <div class="thread-header">
+                            <div class="thread-avatar">LW</div>
+                            <div class="thread-info">
+                                <h4>Success story: From idea to 1000 users in 3 months!</h4>
+                                <div class="thread-meta">by Lisa Wang • 1 day ago</div>
+                            </div>
+                        </div>
+                        <div class="thread-content">
+                            Excited to share my journey! Built a habit tracker app using FlutterFlow and just hit 1000 users. Here's what I learned and mistakes I made...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
