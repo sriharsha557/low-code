@@ -147,8 +147,8 @@ document.querySelectorAll('.form-input, .form-textarea').forEach(input => {
 // Configuration
 const CONFIG = {
     // GitHub repository configuration
-    GITHUB_USER: 'your-username',
-    GITHUB_REPO: 'your-repo-name',
+    GITHUB_USER: 'sriharsha557',
+    GITHUB_REPO: 'low-code',
     GUIDES_FOLDER: 'guides',
     GITHUB_API_BASE: 'https://api.github.com/repos',
     GITHUB_RAW_BASE: 'https://raw.githubusercontent.com',
