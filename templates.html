@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates - Low-Code.in</title>
+    <meta name="description" content="Ready-to-use templates for low-code platforms - Web Templates, AI Apps, and Agentic Apps">
+    
+    <!-- External Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="assets/lowcode_2.png" alt="Low-Code.in" class="logo-img">
+        </div>
+        <nav class="nav-buttons">
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="about.html" class="nav-btn">About</a>
+            <a href="guides.html" class="nav-btn">Guides</a>
+            <a href="templates.html" class="nav-btn active">Templates</a>
+            <a href="community.html" class="nav-btn">Community</a>
+            <a href="contact.html" class="nav-btn">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Welcome Screen - Auto-hide and show templates -->
+        <div id="welcome-screen" class="screen active">
+            <section class="hero">
+                <div class="floating-element triangle top-right"></div>
+                <div class="floating-element square top-left"></div>
+                <div class="floating-element circle bottom-right"></div>
+                
+                <h1 class="glitch">LOADING TEMPLATES...</h1>
+                <p class="subtitle">Initializing Template Database</p>
+                
+                <div class="loading-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p class="loading-text">Scanning repository for templates...</p>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Templates List Screen -->
+        <div id="templates-screen" class="screen">
+            <section class="hero">
+                <div class="floating-element triangle top-right"></div>
+                <div class="floating-element square top-left"></div>
+                <div class="floating-element circle bottom-right"></div>
+                
+                <h1 class="glitch">TEMPLATE LIBRARY</h1>
+                <p class="subtitle">Ready-to-Use. Copy. Deploy.</p>
+                
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <span class="stat-number" id="template-count">0</span>
+                        <span class="stat-label">TEMPLATES</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">CATEGORIES</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">FREE</span>
+                        <span class="stat-label">DOWNLOAD</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Category Tabs -->
+            <section class="category-tabs-section">
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="all">All Templates</button>
+                    <button class="category-tab" data-category="webpage">Web Templates</button>
+                    <button class="category-tab" data-category="ai-apps">AI Apps</button>
+                    <button class="category-tab" data-category="agentic-apps">Agentic Apps</button>
+                </div>
+            </section>
+            
+            <section class="templates-section">
+                <div class="templates-grid" id="templates-grid">
+                    <!-- Templates will be loaded here -->
+                </div>
+                
+                <div class="load-more-container" id="load-more-container" style="display: none;">
+                    <button class="cta-btn load-more-btn" onclick="loadMoreTemplates()">
+                        Load More Templates
+                    </button>
+                </div>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner-container">
+                        <div class="retro-spinner"></div>
+                        <p>SCANNING FOR TEMPLATES...</p>
+                    </div>
+                </div>
+                
+                <div class="error-section" id="error-message" style="display: none;">
+                    <div class="error-box">
+                        <h3>Oops! Something went wrong</h3>
+                        <p>Failed to load templates. Please try again.</p>
+                        <button class="cta-btn" onclick="loadInitialTemplates()">Retry</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Template Viewer Screen -->
+        <div id="viewer-screen" class="screen">
+            <section class="viewer-header-section">
+                <div class="back-navigation">
+                    <button class="nav-btn back-button" onclick="showTemplatesList()">
+                        ← Back to Templates
+                    </button>
+                </div>
+                
+                <div class="template-title-section">
+                    <h1 class="template-main-title" id="template-title">Loading Template...</h1>
+                    <div class="template-metadata">
+                        <span class="meta-item" id="template-category">Category: Loading...</span>
+                        <span class="meta-item" id="template-size">Size: Loading...</span>
+                        <span class="meta-item" id="template-version">Version: Loading...</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="template-content-section">
+                <div class="template-content" id="template-content">
+                    <div class="content-loading">
+                        <div class="retro-spinner"></div>
+                        <p>LOADING TEMPLATE PREVIEW...</p>
+                    </div>
+                </div>
+                
+                <div class="template-actions">
+                    <button class="action-btn preview-btn" id="preview-btn" onclick="previewTemplate()">
+                        Live Preview
+                    </button>
+                    <button class="action-btn download-btn" id="download-btn" onclick="downloadTemplate()">
+                        Download Template
+                    </button>
+                    <button class="action-btn fork-btn" id="fork-btn" onclick="forkTemplate()">
+                        Fork & Customize
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="templates.js"></script>
+</body>
+</html>
