@@ -63,16 +63,31 @@
         <section class="quick-contact">
             <h2>Quick Message</h2>
             <p>Want to send a quick note? Use this form and I'll get back to you!</p>
+            
+            <!-- Form feedback messages -->
+            <div id="form-success" class="form-success">
+                🎉 Thanks for your message! I'll get back to you soon.
+            </div>
+            <div id="form-error" class="form-error">
+                ❌ Oops! Something went wrong. Please try again or email me directly.
+            </div>
+            
             <div class="contact-form-container">
-                <div class="contact-item">
-                    <span class="contact-label">📝 Name:</span>
-                    <input type="text" id="name" class="contact-input" placeholder="Your awesome name">
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">💡 Message:</span>
-                    <textarea id="message" class="contact-textarea" placeholder="Tell me about your idea, question, or just say hi!"></textarea>
-                </div>
-                <button class="contact-submit" onclick="sendMessage()">Send Message 🚀</button>
+                <form id="contact-form" action="https://formspree.io/f/mnnbkzvn" method="POST">
+                    <div class="contact-item">
+                        <span class="contact-label">📝 Name:</span>
+                        <input type="text" id="name" name="name" class="contact-input" placeholder="Your awesome name" required>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">📧 Email:</span>
+                        <input type="email" id="email" name="email" class="contact-input" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">💡 Message:</span>
+                        <textarea id="message" name="message" class="contact-textarea" placeholder="Tell me about your idea, question, or just say hi!" required></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn" class="contact-submit">Send Message 🚀</button>
+                </form>
             </div>
         </section>
 
@@ -85,27 +100,74 @@
     </div>
 
     <script>
-        function sendMessage() {
-            const name = document.getElementById('name').value;
-            const message = document.getElementById('message').value;
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
             
-            if (!name || !message) {
-                alert('Please fill in both your name and message! 😊');
-                return;
+            const form = e.target;
+            const submitBtn = document.getElementById('submit-btn');
+            const successMsg = document.getElementById('form-success');
+            const errorMsg = document.getElementById('form-error');
+            
+            // Hide any previous messages
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.classList.add('loading');
+            submitBtn.textContent = 'Sending...';
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success
+                    successMsg.style.display = 'block';
+                    form.reset();
+                    
+                    // Scroll to success message
+                    successMsg.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Error
+                errorMsg.style.display = 'block';
+                
+                // Scroll to error message
+                errorMsg.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('loading');
+                submitBtn.textContent = 'Send Message 🚀';
             }
+        });
+        
+        // Add some nice form interactions
+        const inputs = document.querySelectorAll('.contact-input, .contact-textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentNode.style.transform = 'scale(1.02)';
+                this.parentNode.style.transition = 'transform 0.2s ease';
+            });
             
-            const subject = `Low-Code.in Contact: Message from ${name}`;
-            const body = `Hi there!\n\nName: ${name}\n\nMessage:\n${message}\n\nSent from Low-Code.in contact form.`;
-            
-            const mailtoLink = `mailto:aivisionaryforfuture@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoLink;
-            
-            // Clear form
-            document.getElementById('name').value = '';
-            document.getElementById('message').value = '';
-            
-            alert('Thanks for reaching out! Your email client should open now. 🎉');
-        }
+            input.addEventListener('blur', function() {
+                this.parentNode.style.transform = 'scale(1)';
+            });
+        });
     </script>
 </body>
 </html>
