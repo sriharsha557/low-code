@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Guides - Retro Code Tutorials</title>
+    <meta name="description" content="Collection of development tutorials and guides with a retro computing aesthetic">
+    
+    <!-- External Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMDAwMDAwIi8+CjxwYXRoIGQ9Ik04IDhIMjRWMjRIOFY4WiIgc3Ryb2tlPSIjMDBGRjAwIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+">
+</head>
+<body>
+    <!-- Terminal Header -->
+    <header class="terminal-header">
+        <div class="window-controls">
+            <span class="control-button close"></span>
+            <span class="control-button minimize"></span>
+            <span class="control-button maximize"></span>
+        </div>
+        <div class="terminal-title">DEV_GUIDES.EXE</div>
+        <div class="terminal-menu">
+            <a href="#home" class="menu-item active">HOME</a>
+            <a href="#guides" class="menu-item">GUIDES</a>
+            <a href="#about" class="menu-item">ABOUT</a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="ascii-art">
+                <pre>
+██████╗ ███████╗██╗   ██╗     ██████╗ ██╗   ██╗██╗██████╗ ███████╗███████╗
+██╔══██╗██╔════╝██║   ██║    ██╔════╝ ██║   ██║██║██╔══██╗██╔════╝██╔════╝
+██║  ██║█████╗  ██║   ██║    ██║  ███╗██║   ██║██║██║  ██║█████╗  ███████╗
+██║  ██║██╔══╝  ╚██╗ ██╔╝    ██║   ██║██║   ██║██║██║  ██║██╔══╝  ╚════██║
+██████╔╝███████╗ ╚████╔╝     ╚██████╔╝╚██████╔╝██║██████╔╝███████╗███████║
+╚═════╝ ╚══════╝  ╚═══╝       ╚═════╝  ╚═════╝ ╚═╝╚═════╝ ╚══════╝╚══════╝
+                </pre>
+            </div>
+            <div class="welcome-text">
+                <p class="typewriter">> Welcome to the Developer Guides Terminal</p>
+                <p class="typewriter" style="animation-delay: 1s;">> Loading tutorial database...</p>
+                <p class="typewriter" style="animation-delay: 2s;">> System ready. Type 'GUIDES' to continue.</p>
+            </div>
+            <div class="command-prompt">
+                <span class="prompt">C:\DEV\GUIDES></span>
+                <span class="cursor">_</span>
+            </div>
+            <button class="crt-button" onclick="showGuidesList()">
+                <span class="button-text">LOAD GUIDES</span>
+            </button>
+        </div>
+
+        <!-- Guides List Screen -->
+        <div id="guides-screen" class="screen">
+            <div class="screen-header">
+                <h1 class="glitch" data-text="AVAILABLE GUIDES">AVAILABLE GUIDES</h1>
+                <div class="status-bar">
+                    <span class="status-item">STATUS: ONLINE</span>
+                    <span class="status-item">GUIDES: <span id="guide-count">0</span></span>
+                    <span class="status-item">VERSION: 1.0.0</span>
+                </div>
+            </div>
+            
+            <div class="guides-container">
+                <div class="guides-grid" id="guides-grid">
+                    <!-- Guides will be dynamically loaded here -->
+                </div>
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>ACCESSING GITHUB REPOSITORY...</p>
+                </div>
+                <div class="error-message" id="error-message" style="display: none;">
+                    <p>ERROR: FAILED TO LOAD GUIDES</p>
+                    <button class="retry-button" onclick="loadGuides()">RETRY</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guide Viewer Screen -->
+        <div id="viewer-screen" class="screen">
+            <div class="viewer-header">
+                <button class="back-button" onclick="showGuidesList()">
+                    <span>&lt; BACK TO GUIDES</span>
+                </button>
+                <h2 class="guide-title" id="guide-title">Loading...</h2>
+                <div class="guide-meta">
+                    <span id="guide-date"></span>
+                    <span id="guide-size"></span>
+                </div>
+            </div>
+            <div class="guide-content" id="guide-content">
+                <div class="content-loading">
+                    <div class="spinner"></div>
+                    <p>COMPILING MARKDOWN...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="terminal-footer">
+        <div class="footer-content">
+            <span class="footer-item">SYSTEM: OPERATIONAL</span>
+            <span class="footer-item">RAM: 64KB</span>
+            <span class="footer-item">CPU: 8088</span>
+            <span class="footer-item">© 2024 DEV.GUIDES</span>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
