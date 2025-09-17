@@ -1535,7 +1535,7 @@ body::before {
 
 .community-rules h3 {
     font-family: 'Orbitron', monospace;
-    color: #000;
+    color: #333;
     margin-bottom: 15px;
     text-transform: uppercase;
 }
