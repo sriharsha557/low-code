@@ -385,3 +385,133 @@ function showGuidesList() {
     document.getElementById('viewer-screen').classList.remove('active');
     document.getElementById('guides-screen').classList.add('active');
 }
+<script>
+let currentGuidesLoaded = 0;
+const guidesPerPage = 20;
+
+// Sample guides data
+const allGuides = [
+    {
+        name: "HTML Tutorial",
+        description: "Complete HTML guide for beginners",
+        filename: "html_tutorial.md",
+        size: "45KB",
+        date: "2024-01-15"
+    },
+    {
+        name: "CSS Fundamentals", 
+        description: "Master CSS styling and layouts",
+        filename: "css_fundamentals.md",
+        size: "38KB",
+        date: "2024-01-20"
+    },
+    {
+        name: "JavaScript Basics",
+        description: "Learn JavaScript programming", 
+        filename: "javascript_basics.md",
+        size: "52KB",
+        date: "2024-01-25"
+    }
+    // Add more guides as needed
+];
+
+// Auto-load guides when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(() => {
+        document.getElementById('welcome-screen').style.display = 'none';
+        document.getElementById('guides-screen').classList.add('active');
+        loadInitialGuides();
+    }, 3000);
+});
+
+function loadInitialGuides() {
+    document.getElementById('loading').style.display = 'block';
+    
+    setTimeout(() => {
+        loadGuides(0, guidesPerPage);
+        document.getElementById('loading').style.display = 'none';
+    }, 1000);
+}
+
+function loadGuides(start = 0, count = guidesPerPage) {
+    const guidesGrid = document.getElementById('guides-grid');
+    const guidesToShow = allGuides.slice(start, start + count);
+    
+    guidesToShow.forEach(guide => {
+        const guideCard = createGuideCard(guide);
+        guidesGrid.appendChild(guideCard);
+    });
+    
+    currentGuidesLoaded += guidesToShow.length;
+    document.getElementById('guide-count').textContent = currentGuidesLoaded;
+    
+    const loadMoreContainer = document.getElementById('load-more-container');
+    if (currentGuidesLoaded < allGuides.length) {
+        loadMoreContainer.style.display = 'block';
+    } else {
+        loadMoreContainer.style.display = 'none';
+    }
+}
+
+function loadMoreGuides() {
+    loadGuides(currentGuidesLoaded, guidesPerPage);
+}
+
+function createGuideCard(guide) {
+    const card = document.createElement('div');
+    card.className = 'guide-card';
+    card.onclick = () => openGuide(guide);
+    
+    card.innerHTML = `
+        <div class="guide-header">
+            <h3 class="guide-name">${guide.name}</h3>
+            <span class="guide-type">MD</span>
+        </div>
+        <p class="guide-description">${guide.description}</p>
+        <div class="guide-info">
+            <span class="guide-size">${guide.size}</span>
+            <span class="guide-date">${guide.date}</span>
+        </div>
+    `;
+    
+    return card;
+}
+
+function openGuide(guide) {
+    document.getElementById('guides-screen').classList.remove('active');
+    document.getElementById('viewer-screen').classList.add('active');
+    
+    document.getElementById('guide-title').textContent = guide.name;
+    document.getElementById('guide-date').textContent = guide.date; 
+    document.getElementById('guide-size').textContent = guide.size;
+    
+    loadGuideContent(guide.filename);
+}
+
+function loadGuideContent(filename) {
+    const contentDiv = document.getElementById('guide-content');
+    contentDiv.innerHTML = '<div class="content-loading"><div class="spinner"></div><p>LOADING CONTENT...</p></div>';
+    
+    fetch(`guides/${filename}`)
+        .then(response => response.text())
+        .then(markdown => {
+            const html = marked.parse(markdown);
+            contentDiv.innerHTML = html;
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightElement(block);
+            });
+        })
+        .catch(error => {
+            contentDiv.innerHTML = `
+                <div class="error-message">
+                    <p>ERROR: Could not load ${filename}</p>
+                    <p>Make sure the file exists in the guides/ folder</p>
+                </div>
+            `;
+        });
+}
+
+function showGuidesList() {
+    document.getElementById('viewer-screen').classList.remove('active');
+    document.getElementById('guides-screen').classList.add('active');
+}
