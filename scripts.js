@@ -1,4 +1,3 @@
-<script>
 // Tab switching functionality
 function switchTab(tabName) {
     // Hide all tab contents
@@ -385,7 +384,6 @@ function showGuidesList() {
     document.getElementById('viewer-screen').classList.remove('active');
     document.getElementById('guides-screen').classList.add('active');
 }
-<script>
 let currentGuidesLoaded = 0;
 const guidesPerPage = 20;
 
