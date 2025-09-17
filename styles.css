@@ -43,12 +43,14 @@ body::before {
 }
 
 .logo {
-    font-family: 'Orbitron', monospace;
-    font-size: 24px;
-    font-weight: 900;
-    color: #000;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
 }
 
 .nav-buttons {
@@ -379,8 +381,8 @@ body::before {
         gap: 20px;
     }
     
-    .logo {
-        font-size: 20px;
+    .logo-img {
+        height: 35px;
     }
     
     .floating-element {
