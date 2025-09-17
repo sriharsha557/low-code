@@ -2230,3 +2230,26 @@ body::before {
         overflow-x: scroll;
     }
 }
+.feature-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:nth-child(2) {
+    cursor: pointer;
+}
+.menu-item {
+    text-decoration: none;
+    color: #00ff00;
+    transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+    color: #ffffff;
+    background-color: rgba(0, 255, 0, 0.2);
+}
