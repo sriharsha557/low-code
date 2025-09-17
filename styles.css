@@ -50,7 +50,6 @@ body::before {
 .logo-img {
     height: 25px;
     width: auto;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
 }
 
 .nav-buttons {
