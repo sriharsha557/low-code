@@ -929,3 +929,122 @@ body::before {
         font-size: 1.8rem;
     }
 }
+/* Additional styles for contact form - Add these to your existing styles.css file */
+
+/* Form feedback messages */
+.form-success {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+    display: none;
+    box-shadow: 0 4px 20px rgba(74, 222, 128, 0.3);
+    animation: slideIn 0.5s ease-out;
+}
+
+.form-error {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+    display: none;
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.3);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Submit button states */
+.contact-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.contact-submit:disabled:hover {
+    transform: none !important;
+}
+
+/* Loading spinner */
+.loading {
+    position: relative;
+    padding-right: 40px !important;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Enhanced form interactions */
+.contact-item:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+    border-color: #9333ea;
+}
+
+/* Form validation styles */
+.contact-input:valid {
+    border-color: #22c55e;
+}
+
+.contact-input:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+}
+
+.contact-textarea:valid {
+    border-color: #22c55e;
+}
+
+.contact-textarea:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+}
+
+/* Mobile responsiveness for form messages */
+@media (max-width: 768px) {
+    .form-success,
+    .form-error {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .loading::after {
+        right: 10px;
+        width: 14px;
+        height: 14px;
+    }
+}
