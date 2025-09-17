@@ -31,14 +31,14 @@
 
     <!-- Main Container -->
     <div class="container">
-        <!-- Welcome Screen -->
-        <div id="welcome-screen" class="screen active">
+        <!-- Welcome Screen - Auto-hide and show guides -->
+        <div id="welcome-screen" class="screen">
             <div class="ascii-art">
                 <pre>
 ██████╗ ███████╗██╗   ██╗     ██████╗ ██╗   ██╗██╗██████╗ ███████╗███████╗
-██╔══██╗██╔════╝██║   ██║    ██╔════╝ ██║   ██║██║██╔══██╗██╔════╝██╔════╝
+██╔══██╗██╔════╝██║   ██║    ██╔════╝ ██║   ██║██║██╔══██╗██╔════╝╚══════╝
 ██║  ██║█████╗  ██║   ██║    ██║  ███╗██║   ██║██║██║  ██║█████╗  ███████╗
-██║  ██║██╔══╝  ╚██╗ ██╔╝    ██║   ██║██║   ██║██║██║  ██║██╔══╝  ╚════██║
+██║  ██║██╔══╝  ╚██╗ ██╔╝    ██║   ██║██║   ██║██║██║  ██║██╔══╝  ╚══════╝
 ██████╔╝███████╗ ╚████╔╝     ╚██████╔╝╚██████╔╝██║██████╔╝███████╗███████║
 ╚═════╝ ╚══════╝  ╚═══╝       ╚═════╝  ╚═════╝ ╚═╝╚═════╝ ╚══════╝╚══════╝
                 </pre>
@@ -46,17 +46,10 @@
             <div class="welcome-text">
                 <p class="typewriter">> Welcome to the Developer Guides Terminal</p>
                 <p class="typewriter" style="animation-delay: 1s;">> Loading tutorial database...</p>
-                <p class="typewriter" style="animation-delay: 2s;">> System ready. Type 'GUIDES' to continue.</p>
+                <p class="typewriter" style="animation-delay: 2s;">> Initializing guides display...</p>
             </div>
-            <div class="command-prompt">
-                <span class="prompt">C:\DEV\GUIDES></span>
-                <span class="cursor">_</span>
-            </div>
-            <button class="crt-button" onclick="showGuidesList()">
-                <span class="button-text">LOAD GUIDES</span>
-            </button>
         </div>
-
+        
         <!-- Guides List Screen -->
         <div id="guides-screen" class="screen">
             <div class="screen-header">
@@ -70,17 +63,22 @@
             
             <div class="guides-container">
                 <div class="guides-grid" id="guides-grid">
-                    <!-- Guides will be dynamically loaded here -->
+                    <!-- Initial guides will be loaded here -->
+                </div>
+                <div class="load-more-container" id="load-more-container" style="display: none;">
+                    <button class="crt-button load-more-btn" onclick="loadMoreGuides()">
+                        <span class="button-text">LOAD MORE GUIDES</span>
+                    </button>
                 </div>
                 <div class="loading" id="loading">
                     <div class="spinner"></div>
-                    <p>ACCESSING GITHUB REPOSITORY...</p>
+                    <p>SCANNING REPOSITORY...</p>
                 </div>
                 <div class="error-message" id="error-message" style="display: none;">
                     <p>ERROR: FAILED TO LOAD GUIDES</p>
                     <button class="retry-button" onclick="loadGuides()">RETRY</button>
                 </div>
-            </div>
+            
         </div>
 
         <!-- Guide Viewer Screen -->
