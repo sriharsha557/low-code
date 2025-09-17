@@ -144,3 +144,102 @@ document.querySelectorAll('.form-input, .form-textarea').forEach(input => {
         }, 2000);
     });
 });
+// Configuration
+const CONFIG = {
+    // GitHub repository configuration
+    GITHUB_USER: 'your-username',
+    GITHUB_REPO: 'your-repo-name',
+    GUIDES_FOLDER: 'guides',
+    GITHUB_API_BASE: 'https://api.github.com/repos',
+    GITHUB_RAW_BASE: 'https://raw.githubusercontent.com',
+    
+    // Default branch (usually 'main' or 'master')
+    BRANCH: 'main',
+    
+    // Cache duration in milliseconds (5 minutes)
+    CACHE_DURATION: 5 * 60 * 1000
+};
+
+// Global state
+let guidesData = [];
+let currentGuide = null;
+let cache = {
+    guides: null,
+    timestamp: null
+};
+
+// Initialize the application
+document.addEventListener('DOMContentLoaded', function() {
+    initializeApp();
+    setupEventListeners();
+    configureMarked();
+});
+
+/**
+ * Initialize the application
+ */
+function initializeApp() {
+    console.log('🚀 Initializing Dev Guides Terminal...');
+    
+    // Show welcome screen initially
+    showScreen('welcome-screen');
+    
+    // Setup highlight.js for code syntax highlighting
+    if (typeof hljs !== 'undefined') {
+        hljs.configure({
+            languages: ['html', 'css', 'javascript', 'python', 'bash', 'json', 'markdown']
+        });
+    }
+    
+    console.log('✅ Application initialized successfully');
+}
+
+/**
+ * Setup event listeners
+ */
+function setupEventListeners() {
+    // Handle navigation menu clicks
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.addEventListener('click', handleMenuClick);
+    });
+    
+    // Handle keyboard shortcuts
+    document.addEventListener('keydown', handleKeyboardShortcuts);
+    
+    // Handle window resize for responsive behavior
+    window.addEventListener('resize', handleWindowResize);
+}
+
+/**
+ * Configure Marked.js settings
+ */
+function configureMarked() {
+    if (typeof marked !== 'undefined') {
+        marked.setOptions({
+            highlight: function(code, lang) {
+                if (typeof hljs !== 'undefined' && lang && hljs.getLanguage(lang)) {
+                    try {
+                        return hljs.highlight(code, { language: lang }).value;
+                    } catch (err) {
+                        console.warn('Highlight.js error:', err);
+                    }
+                }
+                return code;
+            },
+            breaks: true,
+            gfm: true,
+            tables: true,
+            sanitize: false
+        });
+    }
+}
+
+/**
+ * Handle menu navigation
+ */
+function handleMenuClick(e) {
+    e.preventDefault();
+    const target = e.target.getAttribute('href');
+    
+    // Update active menu item
+    document.querySelector
