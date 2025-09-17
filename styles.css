@@ -2253,20 +2253,6 @@ body::before {
     color: #ffffff;
     background-color: rgba(0, 255, 0, 0.2);
 }
-/* Ensure all text is visible */
-body, * {
-    color: #00ff00 !important;
-}
-
-.welcome-text p {
-    color: #00ff00 !important;
-    font-family: 'Courier New', monospace;
-}
-
-.ascii-art pre {
-    color: #00ff00 !important;
-    font-family: 'Courier New', monospace;
-}
 
 /* Load more button styling */
 .load-more-container {
