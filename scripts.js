@@ -243,3 +243,10 @@ function handleMenuClick(e) {
     
     // Update active menu item
     document.querySelector
+function goBack() {
+    if (document.getElementById('viewer-screen').classList.contains('active')) {
+        showGuidesList();
+    } else {
+        window.location.href = 'index.html';
+    }
+}
